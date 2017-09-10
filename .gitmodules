@@ -1,0 +1,3 @@
+[submodule "hugo-site/themes/hugo-alabaster-theme"]
+	path = hugo-site/themes/hugo-alabaster-theme
+	url = https://github.com/digitalcraftsman/hugo-alabaster-theme
