@@ -1,0 +1,21 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=24:nodetype=haswell_reg
+#PBS -P CBBI0905
+#PBS -q smp
+#PBS -l walltime=1:00:00
+#PBS -o /home/wsmidt/outputs/[yourmachinename].out
+#PBS -e /home/wsmidt/outputs/[yourmachinename].err
+
+#PBS -N trainingmap_[yourmachinename]
+#PBS -M [youremail]
+
+mkdir -p /home/wsmidt/lustre/chpc_lecture/[yourmachinename]
+
+module add ????
+module load ????
+module load ????
+
+cd ????
+
+
+

@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "width": 84,
+  "height": 33,
+  "duration": 5.332983,
+  "command": null,
+  "title": null,
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.078722,
+      "\u001b]0;werner.local@parker:~/Sources/git/miscguides/chpc/blast\u0007\u001b]7;file://parker/home/werner.local/Sources/git/miscguides/chpc/blast\u0007"
+    ],
+    [
+      5.7e-05,
+      "[\u001b[32m~/Sources/git/miscguides/chpc/blast]\u001b[0m\r\r\n\u001b[1;36mwerner.local\u001b[1;33m-> \u001b[0m"
+    ],
+    [
+      0.50973,
+      "blastn -query test2.fsa -db blast/rna -word_size 11 | less"
+    ],
+    [
+      1.799969,
+      "\b\b\b\b\b\b\b\u001b[K"
+    ],
+    [
+      0.384037,
+      " | less"
+    ],
+    [
+      0.343939,
+      "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[37Plastn -query test2.^C"
+    ],
+    [
+      1.064073,
+      "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cblastn -query test2.fsa -db blast/rna -word_size 11 | less"
+    ],
+    [
+      0.183898,
+      "\b\b\b\b\b\b\b\u001b[K"
+    ],
+    [
+      0.152045,
+      " | less"
+    ],
+    [
+      0.143891,
+      "\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[K"
+    ],
+    [
+      0.144122,
+      "\u0007"
+    ],
+    [
+      0.135742,
+      "\u0007"
+    ],
+    [
+      0.160094,
+      "\u0007"
+    ],
+    [
+      0.232047,
+      "\u0007"
+    ]
+  ]
+}

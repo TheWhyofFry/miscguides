@@ -1,0 +1,398 @@
+{
+  "version": 1,
+  "width": 100,
+  "height": 29,
+  "duration": 25.164199,
+  "command": null,
+  "title": null,
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.074192,
+      "\u001b]0;werner.local@parker:~/Sources/git/miscguides/chpc\u0007\u001b]7;file://parker/home/werner.local/Sources/git/miscguides/chpc\u0007"
+    ],
+    [
+      2.2e-05,
+      "[\u001b[32m~/Sources/git/miscguides/chpc]\u001b[0m\r\r\n\u001b[1;36mwerner.local\u001b[1;33m-> \u001b[0m"
+    ],
+    [
+      0.590851,
+      "s"
+    ],
+    [
+      0.118051,
+      "s"
+    ],
+    [
+      0.119936,
+      "h"
+    ],
+    [
+      0.37627,
+      " "
+    ],
+    [
+      0.287867,
+      "w"
+    ],
+    [
+      0.097298,
+      "e"
+    ],
+    [
+      0.166855,
+      "rn"
+    ],
+    [
+      0.272033,
+      "e"
+    ],
+    [
+      0.296059,
+      "r.local@137.215.69.254\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
+    ],
+    [
+      0.503937,
+      "\r\n"
+    ],
+    [
+      0.134005,
+      "Last login: Thu Jun 15 07:35:46 2017 from 137.215.69.166\r\r\n                 ╦███╨╨╫█▄              \r\n▐█             ╔╣▒███W╧██▀              \r\n╫╫▀            ▀▒▒▌▀▒▒▒▐╫▌▄▄            \r\n ╫▌           ▐███▒╩▒▄█████▀            \r\n ╨█            ████▌▌██T▀▀╔▌            \r\n  ╬µ            ███▒▒╫█Ñ  ╫H  ,,        \r\n  ▐▌            ╫█████└?█ƒ▌▀▌╬▀▀▀██▄    \r\n   ▀█         eΘ╙╫█╬╬█▌T▌█▀▒▒▒▒▒▒▓▒╫█╕  \r\n ╒Ñ ╚╕      ▄▐░░▒█▒███▌╩▌▒▒▒▒▒▒▒▒▓▓▓▒█╕ \r\n ╫  ▌     ╒D▐µ▄░╬▄█▌▄╣█╫▒▒▒▄▄▄▒▒▒▒▒╝▒▒█ \r\n ▌,╬█    g`╟`╨╝░▀╬█▌▀█U▌▒▒╣╣╣╣▌▒╫▒▒▒▒▒i╫▌  Welcome to Pallas\r\n ╙▌▄█╕  ▐ V N ⁿ╙▓▄█▀▄╫▐▌▒"
+    ],
+    [
+      2.9e-05,
+      "▒╢▓╬▒▓▒▒▓▓▒▒▒▒█\r\n  ╙▀▀▌K╦▀╕ T╕ⁿ╦√▌▀▀Z█╫ⁿ▌▒▒▒║▒╣╬▒▒▒▓▓▒▒▒█\r\n   \"╬█    ▐╦ ²╕╫▌║▐▒╣▒▌╫▄▒▒╚▒╣▓▒▒▓▓▒▒▒▒█\r\n     ▌▄  ¥Γ  ²*Ñ▌Ñ▐W╢▌╨▄█▒▒▒▒▒╝╢╢▒▒▒▒▒▒▌\r\n     ╫▌`└     ƒ UH▐W╫╫░╨▄▀▄▒▒▒▒▒▒▒▒▒▒▒▌ \r\n      ╫      ╒Vƒ H▐▌▐▐░░░▀╬▀▄▒▒▒▒▒▒▒▄▀  \r\n      ╢⌂     M▐` W▐▌`N░▄█▒▐▀╬███▄██▀    \r\n      ▐▌     ╫▀ .  ╩`,▄╫▌╨█▌▄▒▒╬▄       \r\n       ╫     ▌  ▐  \",╩▌▌▌▒▌█░`` ▌       \r\n       ╢µ    ▌  ╡  ▌Æ╫▒▀▌▒█░▌░  \"╕      \r\n       ▐▌    ▌ ,U ▌╫▒╫▐▒▌▒█⌂╫▀▄╓ ▌      \r\n        ╬    █ ╫  ╫▒▒▌╫▒▒▒▌█▌░`░,Ñ    \r\n"
+    ],
+    [
+      0.13983,
+      "werner.local@pallas:~> "
+    ],
+    [
+      1.167037,
+      "c"
+    ],
+    [
+      0.063752,
+      "d"
+    ],
+    [
+      0.103978,
+      " "
+    ],
+    [
+      0.112001,
+      "sshblast/blast/\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
+    ],
+    [
+      0.592084,
+      "\r\n"
+    ],
+    [
+      0.000242,
+      "werner.local@pallas:~/sshblast/blast> "
+    ],
+    [
+      0.855847,
+      "b"
+    ],
+    [
+      0.135747,
+      "l"
+    ],
+    [
+      0.208192,
+      "a"
+    ],
+    [
+      0.088036,
+      "s"
+    ],
+    [
+      0.576174,
+      "tn -query test2.fsa -db blast/rna -word_size 13 | less\r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"
+    ],
+    [
+      4.151781,
+      "\r\n"
+    ],
+    [
+      0.003357,
+      "\u001b[?1049h\u001b[?1h\u001b=\r"
+    ],
+    [
+      0.012043,
+      "BLASTN 2.6.0+\u001b[m\r\n\u001b[m\r\n\u001b[m\r\n"
+    ],
+    [
+      0.949801,
+      "Reference: Zheng Zhang, Scott Schwartz, Lukas Wagner, and Webb\u001b[m\r\nMiller (2000), \"A greedy algorithm for aligning DNA sequences\", J\u001b[m\r\nComput Biol 2000; 7(1-2):203-14.\u001b[m\r\n\u001b[m\r\n\u001b[m\r\n\u001b[m\r\nDatabase: rna\u001b[m\r\n           42,433 sequences; 120,903,795 total letters\u001b[m\r\n\u001b[m\r\n\u001b[m\r\n\u001b[m\r\nQuery= NC_001318.1 Borrelia burgdorferi B31 chromosome, complete genome\u001b[m\r\n\u001b[m\r\nLength=34930\u001b[m\r\n                                                                      Score     E\u001b[m\r\nSequences producing significant alignments:                          (Bits)  Value\u001b[m\r\n\u001b[m\r\nNM_182976.2  Homo sapiens zinc finger protein 326 (ZNF326), trans...  45.4    0.087\u001b[m\r\nXR_113160.1  PREDICTED: Homo sapiens hypothetical LOC100506861 (L...  43.6    0.31 \u001b[m\r\nNM_172250.2  Homo sapiens methylmalonic aciduria (cobalamin defic...  43.6    0.31 \u001b[m\r\nNM_199511.1  Homo sapiens coiled-coil domain containing 80 (CCDC8...  43.6    0.31 \u001b[m\r\nNM_199512.1  Homo sapiens coiled-coil domain containing 80 (CCDC8...  43.6    0.31 \u001b[m\r\nNM_001005747.2  Homo sapien"
+    ],
+    [
+      2.7e-05,
+      "s calcium channel, voltage-dependent, ...  43.6    0.31 \u001b[m\r\nNM_001005746.2  Homo sapiens calcium channel, voltage-dependent, ...  43.6    0.31 \u001b[m\r\nNM_001145798.1  Homo sapiens calcium channel, voltage-dependent, ...  43.6    0.31 \u001b[m\r\n\u001b[7mlines 1-28\u001b[27m\u001b[K"
+    ],
+    [
+      1.234951,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[K[\b[\u001b[K6\b6\u001b[K~\b~\r\u001b[K"
+    ],
+    [
+      0.000584,
+      "NM_000726.3  Homo sapiens calcium channel, voltage-dependent, bet...  43.6    0.31 \u001b[m\r\nNM_000868.2  Homo sapiens 5-hydroxytryptamine (serotonin) recepto...  41.7    1.1  \u001b[m\r\nNM_001004304.3  Homo sapiens zinc finger protein 740 (ZNF740), mRNA   41.7    1.1  \u001b[m\r\nNM_001082969.1  Homo sapiens chromosome 11 open reading frame 57 ...  41.7    1.1  \u001b[m\r\nNM_001082970.1  Homo sapiens chromosome 11 open reading frame 57 ...  41.7    1.1  \u001b[m\r\nNM_018195.3  Homo sapiens chromosome 11 open reading frame 57 (C1...  41.7    1.1  \u001b[m\r\nNM_001172897.1  Homo sapiens caveolin 1, caveolae protein, 22kDa ...  41.7    1.1  \u001b[m\r\nNM_001172896.1  Homo sapiens caveolin 1, caveolae protein, 22kDa ...  41.7    1.1  \u001b[m\r\nNM_001172895.1  Homo sapiens caveolin 1, caveolae protein, 22kDa ...  41.7    1.1  \u001b[m\r\nNM_001753.4  Homo sapiens caveolin 1, caveolae protein, 22kDa (CA...  41.7    1.1  \u001b[m\r\nNM_006528.2  Homo sapiens tissue factor pathway inhibitor 2 (TFPI...  41.7    1.1  \u001b[m\r\nNM_001259.6  Homo sapiens cyclin-dependent kinase 6 (CDK"
+    ],
+    [
+      1.5e-05,
+      "6), trans."
+    ],
+    [
+      0.000213,
+      "..  41.7    1.1  \u001b[m\r\nNM_001145306.1  Homo sapiens cyclin-dependent kinase 6 (CDK6), tr...  41.7    1.1  \u001b[m\r\nNM_021151.3  Homo sapiens carnitine O-octanoyltransferase (CROT),...  41.7    1.1  \u001b[m\r\nNM_001143935.1  Homo sapiens carnitine O-octanoyltransferase (CRO...  41.7    1.1  \u001b[m\r\n\u001b[7mlines 16-43\u001b[27m\u001b[K"
+    ],
+    [
+      0.255283,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[K[\b[\u001b[K6\b6\u001b[K~\b~\r\u001b[K"
+    ],
+    [
+      0.000718,
+      "NR_024010.1  Homo sapiens UDP glucuronosyltransferase 2 family, p...  41.7    1.1  \u001b[m\r\nNM_024743.3  Homo sapiens UDP glucuronosyltransferase 2 family, p...  41.7    1.1  \u001b[m\r\nNM_005832.3  Homo sapiens potassium large conductance calcium-act...  41.7    1.1  \u001b[m\r\nNM_181361.1  Homo sapiens potassium large conductance calcium-act...  41.7    1.1  \u001b[m\r\nNM_178862.1  Homo sapiens STT3, subunit of the oligosaccharyltran...  41.7    1.1  \u001b[m\r\nNM_004807.2  Homo sapiens heparan sulfate 6-O-sulfotransferase 1 ...  41.7    1.1  \u001b[m\r\nNM_145034.4  Homo sapiens torsin A interacting protein 2 (TOR1AIP...  41.7    1.1  \u001b[m\r\nNM_001199260.1  Homo sapiens torsin A interacting protein 2 (TOR1...  41.7    1.1  \u001b[m\r\nXM_001722829.2  PREDICTED: Homo sapiens hypothetical protein LOC1...  39.9    4.1  \u001b[m\r\nXR_133371.1  PREDICTED: Homo sapiens hypothetical LOC100507209 (L...  39.9    4.1  \u001b[m\r\nNM_001185063.1  Homo sapiens zinc finger protein 75D (ZNF75D), tr...  39.9    4.1  \u001b[m\r\nNM_007131.3  Homo sapiens zinc finger protein 75D (ZNF75"
+    ],
+    [
+      1.1e-05,
+      "D), trans...  39.9    4.1  \u001b[m\r\nNM_001105243.1  Homo sapiens protocadherin 19 (PCDH19), transcrip...  39.9    4.1  \u001b[m\r\nNM_020766.2  Homo sapiens protocadherin 19 (PCDH19), transcript v...  39.9    4.1  \u001b[m\r\nNM_001184880.1  Homo sapiens protocadherin 19 (PCDH19), transcrip...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 31-58\u001b[27m\u001b[K"
+    ],
+    [
+      0.983319,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[K[\b[\u001b[K6\b6\u001b[K~\b~\r\u001b[K"
+    ],
+    [
+      0.000655,
+      "NM_014749.3  Homo sapiens KIAA0586 (KIAA0586), mRNA                   39.9    4.1  \u001b[m\r\nNM_032299.3  Homo sapiens DCN1, defective in cullin neddylation 1...  39.9    4.1  \u001b[m\r\nNM_130435.3  Homo sapiens protein tyrosine phosphatase, receptor ...  39.9    4.1  \u001b[m\r\nNM_006504.4  Homo sapiens protein tyrosine phosphatase, receptor ...  39.9    4.1  \u001b[m\r\nNR_033850.1  Homo sapiens hypothetical LOC283089 (LOC283089), non...  39.9    4.1  \u001b[m\r\nNM_178448.3  Homo sapiens chromosome 9 open reading frame 140 (C9...  39.9    4.1  \u001b[m\r\nNM_005511.1  Homo sapiens melan-A (MLANA), mRNA                       39.9    4.1  \u001b[m\r\nNM_006096.3  Homo sapiens N-myc downstream regulated 1 (NDRG1), t...  39.9    4.1  \u001b[m\r\nXM_001721771.2  PREDICTED: Homo sapiens hypothetical protein LOC1...  39.9    4.1  \u001b[m\r\nNM_001198615.1  Homo sapiens microtubule-associated protein 7 (MA...  39.9    4.1  \u001b[m\r\nNM_001198611.1  Homo sapiens microtubule-associated protein 7 (MA...  39.9    4.1  \u001b[m\r\nNM_001198609.1  Homo sapiens microtubule-associated prot"
+    ],
+    [
+      1.2e-05,
+      "ein 7 (MA."
+    ],
+    [
+      0.000244,
+      "..  39.9    4.1  \u001b[m\r\nNM_001198608.1  Homo sapiens microtubule-associated protein 7 (MA...  39.9    4.1  \u001b[m\r\nNM_001198618.1  Homo sapiens microtubule-associated protein 7 (MA...  39.9    4.1  \u001b[m\r\nNM_001198614.1  Homo sapiens microtubule-associated protein 7 (MA...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 46-73\u001b[27m\u001b[K"
+    ],
+    [
+      0.446933,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_001198619.1  Homo sapiens microtubule-associated protein 7 (MA...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 47-74\u001b[27m\u001b[K"
+    ],
+    [
+      0.279939,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_001198617.1  Homo sapiens microtubule-associated protein 7 (MA...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 48-75\u001b[27m\u001b[K"
+    ],
+    [
+      0.659845,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_001198616.1  Homo sapiens microtubule-associated protein 7 (MA...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 49-76\u001b[27m\u001b[K"
+    ],
+    [
+      0.039919,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_003980.4  Homo sapiens microtubule-associated protein 7 (MAP7)...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 50-77\u001b[27m\u001b[K"
+    ],
+    [
+      0.039788,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_030627.2  Homo sapiens cytoplasmic polyadenylation element bin...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 51-78\u001b[27m\u001b[K"
+    ],
+    [
+      0.040137,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_014211.2  Homo sapiens gamma-aminobutyric acid (GABA) A recept...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 52-79\u001b[27m\u001b[K"
+    ],
+    [
+      0.039814,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNR_037897.1  Homo sapiens hypothetical LOC386627 (FLJ38109), non-...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 53-80\u001b[27m\u001b[K"
+    ],
+    [
+      0.040239,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_015384.4  Homo sapiens Nipped-B homolog (Drosophila) (NIPBL), ...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 54-81\u001b[27m\u001b[K"
+    ],
+    [
+      0.039572,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_133433.3  Homo sapiens Nipped-B homolog (Drosophila) (NIPBL), ...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 55-82\u001b[27m\u001b[K"
+    ],
+    [
+      0.040266,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KXR_132691.1  PREDICTED: Homo sapiens hypothetical LOC100507209 (L...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 56-83\u001b[27m\u001b[K"
+    ],
+    [
+      0.039946,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_020453.3  Homo sapiens ATPase, class V, type 10D (ATP10D), mRNA    39.9    4.1  \u001b[m\r\n\u001b[7mlines 57-84\u001b[27m\u001b[K"
+    ],
+    [
+      0.040283,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_007114.2  Homo sapiens TATA element modulatory factor 1 (TMF1)...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 58-85\u001b[27m\u001b[K"
+    ],
+    [
+      0.039662,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_003048.3  Homo sapiens solute carrier family 9 (sodium/hydroge...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 59-86\u001b[27m\u001b[K"
+    ],
+    [
+      0.040303,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KNM_001105659.1  Homo sapiens leucine-rich repeats and IQ motif co...  39.9    4.1  \u001b[m\r\n\u001b[7mlines 60-87\u001b[27m\u001b[K"
+    ],
+    [
+      0.040268,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 61-88\u001b[27m\u001b[K"
+    ],
+    [
+      0.040726,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 62-89\u001b[27m\u001b[K"
+    ],
+    [
+      0.040385,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K>NM_182976.2 Homo sapiens zinc finger protein 326 (ZNF326), transcript variant \u001b[m\r\n\u001b[7mlines 63-90\u001b[27m\u001b[K"
+    ],
+    [
+      0.042649,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K1, mRNA\u001b[m\r\n\u001b[7mlines 64-91\u001b[27m\u001b[K"
+    ],
+    [
+      0.037988,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KLength=2729\u001b[m\r\n\u001b[7mlines 65-92\u001b[27m\u001b[K"
+    ],
+    [
+      0.039978,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 66-93\u001b[27m\u001b[K"
+    ],
+    [
+      0.039572,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K Score = 45.4 bits (24),  Expect = 0.087\u001b[m\r\n\u001b[7mlines 67-94\u001b[27m\u001b[K"
+    ],
+    [
+      0.039951,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K Identities = 37/43 (86%), Gaps = 2/43 (5%)\u001b[m\r\n\u001b[7mlines 68-95\u001b[27m\u001b[K"
+    ],
+    [
+      0.370913,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K Strand=Plus/Minus\u001b[m\r\n\u001b[7mlines 69-96\u001b[27m\u001b[K"
+    ],
+    [
+      0.175683,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 70-97\u001b[27m\u001b[K"
+    ],
+    [
+      0.239937,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KQuery  14964  GGGTGTCAATATATATTTTAAGATCTATTAAATTTCTTACTCT  15006\u001b[m\r\n\u001b[7mlines 71-98\u001b[27m\u001b[K"
+    ],
+    [
+      0.16005,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K              |||||| |||  ||||||||||  |||||||||||||||| ||\u001b[m\r\n\u001b[7mlines 72-99\u001b[27m\u001b[K"
+    ],
+    [
+      0.144124,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KSbjct  1982   GGGTGTTAATTCATATTTTAAG--CTATTAAATTTCTTACCCT  1942\u001b[m\r\n\u001b[7mlines 73-100\u001b[27m\u001b[K"
+    ],
+    [
+      0.136125,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 74-101\u001b[27m\u001b[K"
+    ],
+    [
+      0.143666,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 75-102\u001b[27m\u001b[K"
+    ],
+    [
+      0.136256,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K>XR_113160.1 PREDICTED: Homo sapiens hypothetical LOC100506861 (LOC100506861), \u001b[m\r\n\u001b[7mlines 76-103\u001b[27m\u001b[K"
+    ],
+    [
+      0.136024,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KmiscRNA\u001b[m\r\n\u001b[7mlines 77-104\u001b[27m\u001b[K"
+    ],
+    [
+      0.143878,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KLength=520\u001b[m\r\n\u001b[7mlines 78-105\u001b[27m\u001b[K"
+    ],
+    [
+      0.14401,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 79-106\u001b[27m\u001b[K"
+    ],
+    [
+      0.143918,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K Score = 43.6 bits (23),  Expect = 0.31\u001b[m\r\n\u001b[7mlines 80-107\u001b[27m\u001b[K"
+    ],
+    [
+      0.152229,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K Identities = 39/46 (85%), Gaps = 3/46 (7%)\u001b[m\r\n\u001b[7mlines 81-108\u001b[27m\u001b[K"
+    ],
+    [
+      0.143684,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K Strand=Plus/Plus\u001b[m\r\n\u001b[7mlines 82-109\u001b[27m\u001b[K"
+    ],
+    [
+      0.143993,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 83-110\u001b[27m\u001b[K"
+    ],
+    [
+      0.144149,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KQuery  27409  TTTGTGGAAATTGGAAAACAGAAAA-TTAACTAAAGAATAA-AGAA  27452\u001b[m\r\n\u001b[7mlines 84-111\u001b[27m\u001b[K"
+    ],
+    [
+      0.151992,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K              ||| | |||| |||||||||| ||  ||||||||||||||| ||||\u001b[m\r\n\u001b[7mlines 85-112\u001b[27m\u001b[K"
+    ],
+    [
+      0.224005,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KSbjct  343    TTTATTGAAA-TGGAAAACAGTAATTTTAACTAAAGAATAAGAGAA  387\u001b[m\r\n\u001b[7mlines 86-113\u001b[27m\u001b[K"
+    ],
+    [
+      0.456223,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 87-114\u001b[27m\u001b[K"
+    ],
+    [
+      0.183698,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 88-115\u001b[27m\u001b[K"
+    ],
+    [
+      0.152067,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K>NM_172250.2 Homo sapiens methylmalonic aciduria (cobalamin deficiency) cblA \u001b[m\r\n\u001b[7mlines 89-116\u001b[27m\u001b[K"
+    ],
+    [
+      0.151947,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[Ktype (MMAA), nuclear gene encoding mitochondrial protein, \u001b[m\r\n\u001b[7mlines 90-117\u001b[27m\u001b[K"
+    ],
+    [
+      0.111999,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KmRNA\u001b[m\r\n\u001b[7mlines 91-118\u001b[27m\u001b[K"
+    ],
+    [
+      0.168328,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[KLength=5943\u001b[m\r\n\u001b[7mlines 92-119\u001b[27m\u001b[K"
+    ],
+    [
+      0.16773,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K\u001b[m\r\n\u001b[7mlines 93-120\u001b[27m\u001b[K"
+    ],
+    [
+      0.168125,
+      "\r\u001b[K \u001b[KESC\b\b\bESC\u001b[KO\bO\u001b[KB\bB\r\u001b[K Score = 43.6 bits (23),  Expect = 0.31\u001b[m\r\n\u001b[7mlines 94-121\u001b[27m\u001b[K"
+    ],
+    [
+      2.320045,
+      "\r\u001b[K\u001b[?1l\u001b>\u001b[?1049l"
+    ],
+    [
+      0.000782,
+      "werner.local@pallas:~/sshblast/blast> "
+    ],
+    [
+      1.423254,
+      "logout\r\n"
+    ],
+    [
+      0.001021,
+      "Connection to 137.215.69.254 closed.\r\r\n"
+    ],
+    [
+      0.002108,
+      "\u001b]0;werner.local@parker:~/Sources/git/miscguides/chpc\u0007\u001b]7;file://parker/home/werner.local/Sources/git/miscguides/chpc\u0007"
+    ],
+    [
+      9.4e-05,
+      "[\u001b[32m~/Sources/git/miscguides/chpc]\u001b[0m\r\r\n\u001b[1;36mwerner.local\u001b[1;33m-> \u001b[0m"
+    ]
+  ]
+}

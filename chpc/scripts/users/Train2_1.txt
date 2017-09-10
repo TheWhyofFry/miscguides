@@ -1,0 +1,25 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=24:nodetype=haswell_reg
+#PBS -P CBBI0905
+#PBS -q smp
+#PBS -l wallltime=1:00:00
+#PBS -o /home/wsmidt/outputs/train2_1.out
+#PBS -e /home/wsmidt/outputs/train2_1.err
+
+#PBS -N trainingmap_train2_1
+#PBS -M henneing.stephan0@gmail.com
+
+mkdir -p /home/wsmidt/lustre/chpc_lecture/train2_1
+
+module add chpc/BIOMODULES
+module load bcftools/1.3.1
+module load bowtie2/2.2.9
+module load samtools/1.3.1
+ 
+cd /home/wsmidt/lustre/chpc_lecture/train2_1
+
+bowtie2 -p24 -x ../data/k12 -1 reads1.fata.gz -2 reads2.fasta.gz -S k12map.sam
+samtools view -but ../data/k12.fasta k12map.sam > k12map.bam
+samtools sort k12map.bam k12map.sorted.bam
+samtools mpileup -uf ../data/k12.fasta ./k12map.sorted.bam > k12map.sorted.mpileup
+bcftools call --output-type v -- ploidy 1 -c -v -V indels k12map.sorted.mpileup > k12.vcf

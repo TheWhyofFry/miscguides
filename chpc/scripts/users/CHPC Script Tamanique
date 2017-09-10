@@ -1,0 +1,23 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=24:nodetype=haswell_reg
+#PBS -P CBBI0905
+#PBS -q smp
+#PBS -l walltime=1:00:00
+#PBS -o /home/wsmidt/outputs/train4.out
+#PBS -e /home/wsmidt/outputs/train4.err
+
+#PBS -N trainingmap_train4
+#PBS -M tamakampman@gmail.com
+
+mkdir -p /home/wsmidt/lustre/chpc_lecture/train4
+
+module add chpc/BIOMODULES
+module load bowtie2/2.2.9
+module load samtools/1.3.1
+module load bcftools/1.3.1
+
+cd/home/wsmidt/lustre/chpc_lecture/train4
+
+bowtie2 -p 24 -x ../data/k12 -1 reads1.fastq.gz -2 reads2.fastq.gz | samtools view -@ 24 -but ./EC1_scaffolds.fasta | samtools sort > k12map.sorted.bam 
+samtools mpileup -uf k12.fasta ./k12map.sorted.bam > k12map.sorted.mpileup 
+bcftools call --output-type v --ploidy 1 -c -v -V indels k12map.sorted.mpileup > k12.vcf

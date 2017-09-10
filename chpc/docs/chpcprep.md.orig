@@ -1,0 +1,400 @@
+Table of Contents
+=================
+
+   * [Foreword](#foreword)
+   * [Preamble (beginner)](#preamble-beginner)
+      * [Why a shell, though?](#why-a-shell-though)
+      * [Things you should know . . .](#things-you-should-know---)
+   * [The limitations of a local PC](#the-limitations-of-a-local-pc)
+      * [Processing - more is more](#processing---more-is-more)
+      * [Memory (sans technicalities)](#memory-sans-technicalities)
+      * [Storage](#storage)
+   * [Secure Shell](#secure-shell)
+   * [High-performance computing environments (intermediate)](#high-performance-computing-environments-intermediate)
+      * [Cluster environments](#cluster-environments)
+      * [Modules](#modules)
+      * [PBS scripts](#pbs-scripts)
+         * [Erm, but HOW do I submit a job?](#erm-but-how-do-i-submit-a-job)
+
+
+# Foreword 
+
+This guide is intended for beginner/intermediate users of general Bioinformatics tools.  The end goal being successful usage of the CHPC and cluster environments in general.  Since skill levels vary, I've included a preamble that will cover general execution of commands from a shell and how, with advancement of general computing has allowed us to scale up processes that would elsewise take longer to run than it does to write up a thesis - or a supervisor to evaluate said thesis :-) 
+
+The guide will be annotated with "skill levels", each of which will assume a level of understanding.  These annotations are purely for those of you that would like to skip these sections.  I do recommend you to glance over them, just in case there is some information you may not be aware of. 
+
+For the sake of brevity, this guide will not delve into the usage of the shell and general commands you would use on a Linux system. If you would like a tutorial on this, let me know.
+
+
+# Preamble (beginner)
+
+Most of you have used some sort of bioinformatics application.  While there are different tiers in Bioinformatics, the start and end point is usually "applied" and "core" Bioinformatics.  Applied Bioinformatics is the use of extant tools to facilitate the answering of your sets of scientific question.  BLAST is a good example of this.  If you've BLASTed, you have bioinformaticed (not a real word). While it is pretty cool to just paste your sequences into a web browser and wait for the bloop-dee-bloop to complete, it means a reliance on, for instance, the level congestion at the NCBI, the availability of an internet connection and Donald Trump. The "core" Bioinformatics is development of general Bioinformatics, e.g. the developers of BLAST are core Bioinformaticians.
+
+What if you wanted to BLAST against some of your own, still-in-the-process-of-publishing data? What if you specifically wanted to tweak parameters to your need that may not be available via the web interface? Luckily, BLAST has a download version available for you to run at your leisure. 
+
+Whether you use Windows, Linux, Mac etc, chances are that you would at some point have to get acquainted with something called a "shell".  Simply put, a shell is a textual window that accepts commands.  The shell interprets these commands and pass them to the operating system (that is the software that makes your machine usable, such as Windows, Mac, Linux).  The operating system, on the program's (and your) behalf, allocates the necessary resources in order for the program to be executed.  
+
+To abstract this, imagine the computer is merely an entity that can:
+
+* Take input
+* Process data
+* Have a working memory to store calculations
+* Have an output, e.g to the screen or a file
+
+So all these tasks are performed when you execute an arbitrary program like BLAST.  BLAST will generally:
+
+* Read in the query sequences (the sequences you want to BLAST)
+* Scan against a specified BLAST database (a collection of sequences)
+* Produce an output
+
+It is the shell's job to interpret the commands as well as the parameters (the options, such as input query) and pass it to the appropriate program.  The shell then waits for this program to complete before asking you to issue another command.  Enough talk, let's look at this example.  On my PC, I open up a shell (via 'terminal application'):
+
+```shell
+werner.local@parker:~> blastn -query test.fsa -db dros 
+ Score =  135 bits (73),  Expect = 6e-29
+ Identities = 73/73 (100%), Gaps = 0/73 (0%)
+ Strand=Plus/Minus
+
+Query  154114    CGACCGTGACAGGACTCGAACCTGCAATCTTCGGATCCGAAGTCCGACGCCTTATCCATT  154173
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  21232163  CGACCGTGACAGGACTCGAACCTGCAATCTTCGGATCCGAAGTCCGACGCCTTATCCATT  21232104
+
+Query  154174    AGGCCACACGGTC  154186
+                 |||||||||||||
+Sbjct  21232103  AGGCCACACGGTC  21232091
+
+
+ Score =  132 bits (71),  Expect = 8e-28
+ Identities = 73/74 (99%), Gaps = 0/74 (0%)
+ Strand=Plus/Minus
+
+Query  154113    ACGACCGTGACAGGACTCGAACCTGCAATCTTCGGATCCGAAGTCCGACGCCTTATCCAT  154172
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  14017285  ACGACCGTGACAGGACTCGAACCTGCAATCTTCGGATCCGAAGTCCGACGCCTTATCCAT  14017226
+
+Query  154173    TAGGCCACACGGTC  154186
+                 | ||||||||||||
+Sbjct  14017225  TGGGCCACACGGTC  14017212
+
+....extended output....
+```
+
+So here, ``blastn`` was the command I issued (nucleotide blast), the ``-query`` parameter specifies the input FASTA file I would like to BLAST and the ``-db`` parameter specifies the database I want to use. Here, it is a custom database of the X chromosome of the fruit fly.  Great, we have our output that we can browse at our leisure.  What happened behind the scene, is the shell interpreted the command I gave, looked for the ``blastn`` executable (runnable) file and passed parameters to it.  ``blastn`` in turn checked for the input query and the BLAST database and did its thing.  The operating system was in charge of giving it the necessary resources to complete the task and produce the output. I could also add a parameter, ``-out myblast.txt`` that will write the output to a file instead of the screen. 
+
+
+## Why a shell?
+
+You can argue that something like CLC has a component allowing you to BLAST, skipping all the pesky shell business and you would be correct. This example is merely to show you how you can execute something yourself - on your terms. However, CLC being really expensive and not including all the tools you may need, the shell provides a very powerful interface to many Bioinformatics applications, such as alignment, phylogenetics, gene prediction etc. It gives you more control over what you want to run an where.  There is obviously a learning curve associated with such endeavours, but (granted you come from a wet lab background) it is very similar to learning new lab protocols. Added to this, it is possible to write scripts that execute multiple commands successively. 
+
+
+## Things you should know . . . 
+
+Each shell that is opened runs as its own entity.  This means that shells do not interfere with each other.  If you were to run multiple BLASTs in different shells, the outputs to the screen will be restricted to that shell (unless you specified the same output file).  When you close a shell (exit it), it also means that all programs associated with that shell will be terminated.  So you cannot, by default, run something in a shell, close it, and check on it later. There are ways around this, and we'll get to it later.
+
+# The limitations of a local PC
+
+While you can run things on your own PC, chances are that you will at some point need a more powerful PC that has shared access - a server.  A server colloquially refers to a computer system that has vastly more resources that your local PC.  It is intended to "serve" multiple users and execute massive tasks - such as BLASTing a whole genome against the ``nr`` BLAST database. Before we get into gaining access to a shell on a server, we need to understand how modern computers scale.
+
+## Processing - more is more
+Modern computers have processors (CPUs) that contain multiple cores.  You can think of a core as a single worker.  When running a program, the operating system assigns the program to a core and the tasks gets executed.  When an application is properly designed, it may make use of multiple cores in order to complete the task quicker.  For instance, if you wanted to BLAST a hundred sequences, it would be nice if you could split this into two sets of 50 sequences and let the BLAST run over two cores. The one worker deals with the first 50 and the second worker deals with the second 50 sequences.  This happens simultaneously, so hypothetically, your running time would be cut in half.
+
+## Memory (sans technicalities)
+
+
+In order for the system to successfully execute its tasks, it needs RAM.  RAM is fast memory that can quickly be accessed by the system.  Information is passed from the RAM to the CPU as required, e.g. a certain part of the BLAST database that needs to be scanned.  When the data are large, more RAM is generally required.  The reason it isn't (always) read from disk as required, is because disks (even faster solid state drives) are vastly slower than RAM.  An analogy would be a worker (the CPU) that waits for a delivery person to bring bricks in order for the worker to build a wall.  If the worker builds faster than the delivery person can deliver, it wastes a lot of time.  So RAM delivers a hundred bricks at a time, while the disk will deliver one brick at a time.  A severe bottleneck for the CPU. A server generally has a lot more RAM and can easily store a lot of data (bricks) for guaranteed fast delivery.
+
+## Storage
+
+Servers are usually set up so they have access to large amount of storage.  While the output of your program may be small enough to store on your local PC, things like BLAST databases often aren't. As far as I can recall, the ``nr`` database is 952GB.  Add a few of those together, and you will quickly run out of space.  Servers are also set up to (generally) have faster disk read/write facilities. 
+
+
+
+<!-- ## Output 
+
+Output is the product of the program.  In the BLAST example, the output is the BLAST hits with associated statistics.  The destination of the output is not static and can be changed.  Two output options were explored, screen (the terminal) and a file. Servers generally also have more storage space and can save a lot more data than a normal PC.  The server is also in a secure room, and together with a good backup system, increases the safety of the outputs produced.  While it is normal for a PC to nowadays have a couple of terabytes (1,000GB) of storage, a server may have hundreds to thousands times more storage - CHPC is at 5 petabytes, which is 5,000 terabytes, which is 5,000,000 GBs. Massive. -->
+
+
+# Secure Shell
+
+When you open a shell on your PC, it interfaces only with what you have.  It is completely unaware of other machines that you may want to use.  Because your systems administrator would prefer you not to physically enter the server room and work on the server directly, they usually set up an SSH server.  SSH allows you to remotely access a shell from anywhere, as long as you have access to it and the IT infrastructure policies allow it.  At face value, there isn't much of a difference insofar appearances go, but the shell you are working on now is on another machine.  All the commands you run in this shell are executed on this remote machine.  While the output to the screen is obviously on the terminal you're working on, outputs to files are not.  
+
+To illustrate, let's try the ``blastn`` example I did earlier. 
+
+```shell
+
+werner.local@parker~> ssh werner@someserver
+Enter Password: 
+werner@someserver~> blastn -query test.fsa -db dros
+Command line argument error: Argument "query". File is not accessible:  `test.fsa'
+```
+
+Woopsie. So I ran exactly the same command, but it didn't work.  Why? While the server does have the ``blastn`` program, it neither has my ``test.fsa`` nor the ``dros`` BLAST database.  When you login to a server, you are also using the storage resources of that machine, meaning your files are not visible to it.  However, you do have access to programs/datbases/files that are on this server.  You can also see that my username ``werner.local`` has been changed to ``werner``, because my login to ``someserver`` is ``werner``. We'll get to copying later, but imagine I did copy my database and query files to the server.  If I ran the same command, I will get the output as I did last.
+
+```shell
+werner@someserver~> blastn -query test.fsa -db dros
+
+werner@someserver:~> blastn -query test.fsa -db dros 
+ Score =  135 bits (73),  Expect = 6e-29
+ Identities = 73/73 (100%), Gaps = 0/73 (0%)
+ Strand=Plus/Minus
+
+Query  154114    CGACCGTGACAGGACTCGAACCTGCAATCTTCGGATCCGAAGTCCGACGCCTTATCCATT  154173
+                 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct  21232163  CGACCGTGACAGGACTCGAACCTGCAATCTTCGGATCCGAAGTCCGACGCCTTATCCATT  21232104
+
+Query  154174    AGGCCACACGGTC  154186
+                 |||||||||||||
+Sbjct  21232103  AGGCCACACGGTC  21232091
+....extended output....
+```
+
+
+Great. Something worked.  
+
+
+
+# High-performance computing environments (intermediate)
+
+_Start here if you are familiar with execution of commands on a server_
+
+Servers are powerful machines, but they tend to fall over (or be infuriating) when multiple users want to run multiple jobs.  To mitigate this, queuing systems can be employed where each job of a user is put into a queue where it waits for other jobs to complete before it is run.  The user may not get immediate result relief, but it does help the server cope and ensures the safer execution of other tasks.  Queuing systems also allow the implementation of "fair usage" policies, so one user does not always hog the queue.  Even so, if enough users are using the server, the queue waiting time would eat into productivity.  It is possible to set up multiple servers that share a queuing system to handle more users, but it gets very expensive very quickly and unrealistic for a single research group to fund. 
+
+High performance computing (HPC) centers are locations where many servers can be hosted to handle bigger queues/jobs.  The Centre for High Performance Computing in Cape Town is a good example.  The centre hosts thousands of nodes (servers) that can quite easily cope with many users using the queuing system. The nodes at the CHPC each have (at least) 24 cores and can be fully utilized by the users. 
+
+Queuing is enforced, and we cannot simply run our applications as in the previous section by simply executing the jobs.  In order to make use of the queue, jobs need to be formalized by something called a PBS script.  PBS (Portable Batch System) is a system that handles the managing of job queues and the execution of each job in the queue. Users ask for certain resources, PBS allocates the appropriate node and executes the task on that node. 
+
+
+## Cluster environments
+
+
+
+## Modules
+
+It is often difficult maintaining multiple software packages on a single system.  This is especially true if two software packages contain incompatible dependencies.  Dependencies are auxiliary files needed for the program to run.  Furthermore, users may require different versions of the same package - newer is not necessarily better or compatible, even.  If, for some reason, Bob would like to use version 2.5.0 of BLAST and Alice would like to use version 2.6.0 of BLAST, it would make their lives difficult if they have to manually specify ``blastn-2.6.0`` and ``blastn-2.5.0`` where the default command is just ``blastn``.  So instead, with some magic, the software packages can be loaded as ``modules``.  For example, consider the following modules on the CHPC:
+
+```shell
+ncbi-blast/2.3.0/gcc
+ncbi-blast/2.3.0/intel
+ncbi-blast/2.5.0
+ncbi-blast-2.6.0
+```
+
+Bob would like to load ``ncbi-blast/2.5.0`` Alice, ``ncbi-blast-2.6.0``. Both would just like to use the command ``blastn``.  So Bob would load the module with:
+
+```shell
+bob@chpc ~> blastn
+Command not found
+bob@chpc ~> module load ncbi-blast/2.5.0
+bob@chpc ~> blastn
+BLAST query/options error: Either a BLAST database or subject sequence(s) must be specified
+Please refer to the BLAST+ user manual. 
+# It works
+```
+
+Alice would do it similarly, but instead load the module with ``module load ncbi-blast-2.6.0``.  Beyond satisfying the grievances of users, it is _required_ to load modules that you intend to use, otherwise these commands will not be available. The modules also makes the task of the administrators at the CHPC easy if you would like to install additional packages that are not available.
+
+
+
+## PBS scripts
+
+A PBS script is merely a wrapper for the command you would like to execute.  The PBS script contains the  information for the queuing system to allocate resources, the queue the job needs to be run under, the project this job is associated with, the running time required etc. I want to run the previous ``blastn`` command on the CHPC.  For this, I prepare the following script:
+
+```shell
+#!/bin/bash
+#PBS -l select=1:ncpus=24:nodetype=haswell_reg
+#PBS -P CBBI0905
+#PBS -q smp
+#PBS -l walltime=48:00:00
+#PBS -o /home/wsmidt/outputs/myblast.out
+#PBS -e /home/wsmidt/outputs/myblast.err
+
+#PBS -N mytestblast
+#PBS -M werner.smidt@gmail.com
+
+cd $PBS_O_WORKDIR
+
+
+module add chpc/BIOMODULES
+module load ncbi-blast-2.6.0
+
+blastn -query test.fsa -db nr -num_threads 24 
+```
+
+Let's go through it line by line:
+
+* ``#!/bin/bash`` - I would like to use BASH as my shell and BASH will interpret my commands
+* ``#PBS -l select=1:ncpus=24:nodetype=haswell_reg`` - ``-l`` Passed options to PBS
+	* ``select=1`` - Select one node for the job
+	* ``ncpus=24`` - Make sure the node has at least 24 free cpus (cores)
+	* ``nodetype=haswell_reg`` - Not all nodes are made equal, make sure this is an _awesome_ node
+* ``#PBS -P CBBI0905`` - This job will be run under the specified project.  This part is essential for auditing processes and queuing
+* ``#PBS -q smp`` - Put the job in the ``smp`` queue.  This queue is for jobs needing only one node
+* ``#PBS -l walltime=48:00:00`` -  I would require at most 48 hours.  The execution will terminate if the job isn't done in those hours
+* ``#PBS -o /home/wsmidt/outputs/myblast.out`` - Write the ``stdout`` output to ``myblast.out``
+* ``#PBS -e /home/wsmidt/outputs/myblast.err`` - Write the ``stderr`` output to ``myblast.err``
+* ``#PBS -N mytestblast`` - The name of the job (for information purposes)
+* ``#PBS -M mymail@gmail.com`` - Send the relevant mails to this address
+* ``#PBS -m abe`` - Send a mail when:
+		* The job (b)egins
+		* The job (e)nds
+		* The job is (a)borted (error or otherwise)
+* ``cd $PBS_O_WORKDIR`` - This changes the directory to the path we are in when submitting the job. This is not crucial, but is very helpful if the output and your PBS script are to be in the same path
+* ``module add chpc/BIOMODULES`` - Make the ``BIOMODULES`` available for loading
+* ``module load ncbi-blast-2.6.0`` - Load the 2.6.0 version of BLAST.  This module will not be available if ``BIOMODULES`` was not loaded
+* ``blastn -query test.fsa -db nr -num_threads 24`` - Our command to be executed.  Since no ``-out`` parameter was specified, the output will be written to ``myblast.out``
+
+You may notice the `#` prefix for all the PBS options.  This is necessary, because this script will be executed as a normal shell script and the shell will assume each line is a command. There are no ``PBS`` commands, but PBS interprets this script and looks for lines that start with ``#PBS`` and assigns parameters as determined by it. The shell ignores the lines starting with ``#``. 
+
+To expand a bit on the points listed above:
+
+Ask for 1 node of the ``haswell_reg`` type and require 24 CPUs.  The queue manager will determine if the required resources are available and if not, put the job in the queue until there are.  The ``smp`` queue is the queue of choice here, since it is intended for jobs needing a single node.  Furthermore, we will require a maximum of 48 hours. The job will run under the project "CBBI0905" with the name "mytestblast"
+
+Let's examine the next options, ``-o`` and ``-e``.  In the shell, you would get two main outputs to screen: standard out (``stdout``) and standard error (``stderr``).  Normal output, such as from ``blastn`` will be to ``stdout``.  By convention, ``stdout`` gives the main output of a program.  The other, ``stderr``,  despite the name, gives additional information, such as ``I am BLASTing sequence X`` or some progress information (if the program is designed in such a way).  While on screen these two will appear simultaneously, they are two different "streams" of output, allowing you to separate the two.  The ``-o`` and ``-e`` parameters tells PBS where these outputs will be written to.  So no part of ``stdout`` will be in ``myblast.out`` and no part of ``stderr`` will be in ``myblast.err``.  This is useful if something weird happened. For instance, if our ``blastn`` query contains an error, this information will be written to ``stderr``, while a successful output will be written to ``stdout``.  The reason the outputs are written to a file by default, is because we cannot implicitly see the output generated by the program after submission to the queuing system. If successful, the output will be in ``myblast.out``, because we didn't explicitly defined an output file in the ``blastn`` parameters. 
+
+Looking at ``$PBS_O_WORKDIR``, some explanation is required.  ``PBS_O_WORKDIR`` is an _environment variable_, or a type of shortcut to something that has a value associated with it.  In order to get the actual value, a ``$`` sign prepends this variable.  So the command ``cd $PBS_O_WORKDIR`` will make the shell navigate to the directory from which the script was submitted.  If I submitted the job from ``/some/random/path``, the command would effectively be ``cd /some/random/path``. 
+
+We next load the necessary modules that in turn provide us with the commands associated with BLAST, including ``blastn``. Finally, the command is executed on the node assigned by the queueing system.
+
+### Erm, but HOW do I submit a job?
+
+Oh, right. Perhaps a crucial detail I omitted, was the actual submission of the PBS script.  I saved the PBS script as ``myblast.pbs``.  To submit the job, in a shell on the CHPC, issue the following command:
+
+
+```shell
+wsmidt@login2 ~> qsub myblast.pbs
+123552.sched
+```
+
+The output it gives is an identification of the submitted job.  You can view all the jobs you've submitted with:
+
+```shell
+wsmidt@login2 ~> qstat -u wsmidt
+Job id            Name             User              Time Use S Queue
+----------------  ---------------- ----------------  -------- - -----
+123552.sched01    myblast          wsmidt            00:00:01 R smp
+....
+```
+
+This gives an overview of all your jobs.  Most are self-explanatory.  The ``S`` column shows the state.  This job is currently in the ``R`` state.  Other states are ``Q``, the queue state, notifying you the job hasn't started and the ``E`` state, which is either "end" or "error" (I have to look that up). 
+
+
+Or snoop on other people, with just ``qstat``.
+
+```shell
+wsmidt@login2 ~> qstat 
+Job id            Name             User              Time Use S Queue
+----------------  ---------------- ----------------  -------- - -----
+497003.sched01    MS_EAAB3         accelrys          48:04:50 R accelrys        
+497028.sched01    relax            bibrahim          2226:28: R normal          
+497052.sched01    MS_EBY0D         accelrys          171:05:2 R accelrys        
+497083.sched01    5DEG10PR3.job    zshaikh           1107:39: R normal          
+497087.sched01    5DEG40PR3.job    zshaikh           1106:00: R normal          
+497090.sched01    5DEG40PR6.job    zshaikh           1092:56: R normal          
+497091.sched01    5DEG40PR9.job    zshaikh           362:22:0 R normal          
+497129.sched01    2-thi+o2         cvanderwesthuize  1096:28: R smp             
+497135.sched01    Mn_doped         dsharma           1093:34: R normal          
+497151.sched01    MS_ECHRJ         accelrys          29:06:39 R accelrys        
+497187.sched01    md               eadeniji          1091:40: R normal          
+497276.sched01    MS_EDRYP         accelrys          690:44:0 R accelrys        
+497278.sched01    md               eadeniji          1084:24: R normal          
+497291.sched01    2+pe_sca         bbulling          1063:31: R smp             
+497332.sched01    LIPO_MD_model2   mmukonyora        4928:53: R normal          
+497349.sched01    MS_EGJXU         accelrys          586:18:4 R accelrys        
+497353.sched01    foamJob_11       gerfort           1059:24: R smp             
+497354.sched01    foamJobpt2_11    gerfort                  0 H smp             
+497355.sched01    foamJob_12       gerfort           1059:08: R smp             
+497356.sched01    foamJobpt2_12    gerfort                  0 H smp             
+497357.sched01    foamJob_13       gerfort           1059:24: R smp             
+497358.sched01    foamJobpt2_13    gerfort                  0 H smp             
+497360.sched01    foamJobpt2_14    gerfort           135:06:5 R smp             
+```
+
+You can also kill your job (if you realized you made a mistake) with:
+
+```shell
+wsmidt@login2 ~> qdel 123552
+```
+
+In any event, given the mailing parameters of the script, you should receive at least two mails. One informing you the job has started and the other either saying the job has finished or produced an error.
+
+
+# Example
+
+The previous section was merely an illustration.  In order to get cracking, let's go through a proper example.  We will BLAST a set of 24 nucleotide sequences against the ``nr`` database.  I'll work from the perspective of running a simple BLAST command and then pad it with commands/options for PBS submission.  This example may seem trivial, but there are a few things we need to think about:
+
+
+* What do I want to run?
+* Where do I want the data to be stored?
+* How do I get local data onto the CHPC?
+
+
+There is a FASTA file, [chpctutblast.fsa](../blast/chpctutblast) that you can download to your local machine.  We would like to upload this file to the CHPC.  Before we do that, we need to check the layout of our CHPC storage.  If you are using a Windows machine, get an SSH client like Putty or [MobaXterm](https://mobaxterm.mobatek.net/demo.html). However, I will not include Windows SSH/copying instructions in this guide.  I _think_ MobaXterm can handle file uploads.  Otherwise, in a terminal, issue the following commands:
+
+
+
+```shell
+myuser@myterminal ~> ssh myusername@lengau.chpc.ac.za
+Enter password for 'myusername':
+
+myusername@login2 ~> pwd
+/home/myusername
+
+myusername@login2 ~> ls
+lustre
+
+myusername@login2 ~> 
+```
+
+The ``/home/myusername`` directory is the one where you land when you log in (the command ``pwd`` will show you where you are).  There is limited storage here and should preferably only be used for storing scripts and small data.  The ``lustre`` folder provides you access to another storage with a whole lot more storage space. Let's go to the ``lustre`` folder and create a folder in there called ``chpctut``.
+
+
+
+```shell
+#Change and making a directory
+myuser@login2 ~> cd ~/lustre
+myuser@login2 ~> mkdir chpctut
+myuser@login2 ~> ls chpctut
+#....Nothing
+```
+
+The reason for the tilde (``~``) in the first command, is because it is shorthand for ``/home/myusername``.  Open a new terminal and navigate to the path where you saved ``chpctutblast.fas``.  While we logged in to the CHPC by connecting to ``lengau.chpc.ac.za``, it is expected that you upload files using another server, ``scp.chpc.ac.za``.  The SCP command is used to upload files to a location on a machine for which you have SSH access to. 
+
+
+```shell
+myuser@myterminal ~> cd folder_with_fasta_filename
+myuser@myterminal ~> scp chpctutblast.fsa myuser@scp.chpc.ac.za:~/lustre/chpctut
+#Password
+
+myuser@myterminal ~> ssh myusername@lengau.chpc.ac.za
+myuser@login2 ~> cd ~/lustre/chpctut
+myuser@login2 ~> ls
+chpctutblast.fas
+
+
+```
+
+Great! Our file is there. The command we wish to run using this file as input, is:
+
+```shell
+blastn -query chpctutblast.fsa -db nr -num_threads 24 -out ~/lustre/chpctut/blastoutput.xml -format 5
+<<<<<<< HEAD
+```
+=======
+``
+>>>>>>> a622b6000e83fcc4edc7a6c98a6bb37bb0d08634
+
+It will run a BLAST with ``chcpctutblast.fsa`` as input and ``nr`` as the database, using up to 24 CPU cores (``-num_threads``) and writing the output to the ``chcpctut`` folder, alongside the chpctutblast.fsa file.  Now that we know what we want to do, it becomes a little easier to write a PBS script.
+
+
+Open a text editor (_not_ MS Word/similar.  You need to save this as _unformatted text_).  Save a new file "chpctutblast.pbs". You can use the earlier example PBS script we used as a reference.  Even for people that are familiar with submitting cluster jobs, it is prudent to not rush in writing your PBS script. Ask yourself a few questions.
+
+* What is it I want to run?
+* What is needed in order for this command to run?
+* How long do I estimate the runtime to be? How much resources do I need? What node types?
+* What will I name the job?
+* Do I want confirmation that the job has started/ended/aborted?
+* Where do I want to store my data?
+* Do I need to be in the directory where the script was submitted from?
+
+
+
