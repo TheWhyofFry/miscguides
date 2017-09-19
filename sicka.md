@@ -24,7 +24,7 @@ mkdir ~/go/bin
 Good! Technically, we should run an interactive session to install packages. We can be sneaky and avoid this step, but for the sake of not peeving admins/tech staff, let's start an interactive session with:
 
 ```
-qsub -I -l select=1:ncpu=1:queue=test -l walltime=1:0:0 -P [projectname]
+qsub -I -P CBBI1053 -q smp -l select=1:ncpus=1 -l walltime=2:0:00
 ```
 
 And wait for the interactive session to appear.  Our go environment variables should be set up, but we need to load the ``go`` module in order to fetch and install the ``skicka`` package. Do this with:
